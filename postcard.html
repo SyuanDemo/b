@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <!-- IE可能不見得有效 -->
+    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+    <!-- 設定成馬上就過期 -->
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+    <title>LOOKin旅行跟我來</title>
+
+    <!-- ============= Link ============= -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- ============= Post Card ============= -->
+    <section class="postcard part" id="section-4">
+        <div class="wrap">
+            <div class="wrap-pattern">
+                <div class="title">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="demo">
+                    <div class="bg">
+                        <img src="img/postcard/demo.png" alt="">
+                        <div class="demo-deco">
+                            <img id="demo-postcard" src="img/postcard/postcard-2.png" data-img-url="" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="item-part">
+                    <div class="text item-box">
+                        <a href="https://event.look-in.com.tw/2019/lookintravel2019/#section-4" class="return-btn send-btn">
+                            <img src="img/postcard/return-btn.png" alt="再做一張">
+                        </a>
+                        <div class="download-btn send-btn">
+                            <img src="img/postcard/download-btn.png" alt="儲存圖片">
+                        </div>
+                        <div class="share-btn send-btn">
+                            <img src="img/postcard/share-btn.png" alt="Line分享">
+                        </div>
+                    </div>
+                </div>
+                <!-- ============= Footer ============= -->
+                <footer>
+                    <div class="footer-bg"></div>
+                    <div class="wrap">
+                        <div class="link">
+                            <a class="web" target="_blank" href="https://www.look-in.com.tw/"><img src="img/footer/lookin.png" alt="LOOKin"></a>
+                            <a class="fb" target="_blank" href="https://www.facebook.com/lookin.tw/"><img src="img/footer/fb.png" alt="LOOKin FB"></a>
+                            <a class="ins" target="_blank" href="https://www.instagram.com/ilovelookin/"><img src="img/footer/ig.png" alt="LOOKin IG"></a>
+                            <a class="yt" target="_blank" href="https://www.youtube.com/channel/UC9FymR5DhAubxbjWM9JmS_Q"><img src="img/footer/youtube.png" alt="LOOKin Youtube"></a>
+                        </div>
+                        <p>尖端出版 版權所有，禁止未經授權轉貼節錄。<a href="https://www.look-in.com.tw/privacy">隱私權政策</a><br>©1999- <script>var d=new Date();document.write(d.getFullYear());</script> Sharp Point Media Group, a division of Cite Publishing Ltd All rights reserved.</p>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- ============= Script Src ============= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://event.look-in.com.tw/2019/ilovechocolate/js/sweetalert.min.js"></script>
+
+<!-- ============= Postcard ============= -->
+<script>
+    $(function () {
+        $("#item-1").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-1.png");
+        });
+
+        $("#item-2").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-2.png");
+        });
+
+        $("#item-3").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-3.png");
+        });
+
+        $("#item-4").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-1.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-1.png');
+        });
+        $("#item-5").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-2.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-2.png');
+        });
+        $("#item-6").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-3.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-3.png');
+        });
+        $("#item-7").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-4.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-4.png');
+        });
+        $("#item-8").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-5.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-5.png');
+        });
+        $("#item-9").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-6.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-6.png');
+        });
+
+        $("#item-10").click(function () { //裝飾
+            $("#demo-decoration-1").toggle();
+            $("#demo-decoration-1").attr("src", "img/postcard/deco-1.png");
+            $("#demo-decoration-1").data('img-url','img/postcard/deco-1.png');
+        });
+        $("#item-11").click(function () { //裝飾
+            $("#demo-decoration-2").toggle();
+            $("#demo-decoration-2").attr("src", "img/postcard/deco-2.png");
+            $("#demo-decoration-2").data('img-url','img/postcard/deco-2.png');
+        });
+        $("#item-12").click(function () { //裝飾
+            $("#demo-decoration-3").toggle();
+            $("#demo-decoration-3").attr("src", "img/postcard/deco-3.png");
+            $("#demo-decoration-3").data('img-url','img/postcard/deco-3.png');
+        });
+        $("#item-13").click(function () { //裝飾
+            $("#demo-decoration-4").toggle();
+            $("#demo-decoration-4").attr("src", "img/postcard/deco-4.png");
+            $("#demo-decoration-4").data('img-url','img/postcard/deco-4.png');
+        });
+        $("#item-14").click(function () { //裝飾
+            $("#demo-decoration-5").toggle();
+            $("#demo-decoration-5").attr("src", "img/postcard/deco-5.png");
+            $("#demo-decoration-5").data('img-url','img/postcard/deco-5.png');
+        });
+        $("#item-15").click(function () { //裝飾
+            $("#demo-decoration-6").toggle();
+            $("#demo-decoration-6").attr("src", "img/postcard/deco-6.png");
+            $("#demo-decoration-6").data('img-url','img/postcard/deco-6.png');
+        });
+    });
+
+</script>
+</body>
+
+</html>

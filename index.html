@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <!-- IE可能不見得有效 -->
+    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+    <!-- 設定成馬上就過期 -->
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+    <title>LOOKin旅行跟我來</title>
+
+    <meta property="fb:app_id" content="865604973561790" />
+    <meta property="fb:admins" content="100000158636800" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LOOKin旅行跟我來">
+    <meta property="og:description" content="全台&全世界好好玩攻略・現在就出發">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">  
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="https://event.look-in.com.tw/2019/lookintravel2019/img/1200x630.jpg">
+
+    <!-- ============= Link ============= -->
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://event.look-in.com.tw/2016/lookin-tarot/images/tarot.png">
+    <link rel="stylesheet" type="text/css" href="https://event.look-in.com.tw/2019/ilovechocolate/css/sweetalert.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login-view.css">
+</head>
+<body>
+    <!-- ============= Sign In ============= -->
+        <!-- <?php
+            require("sign.php");
+        ?> -->
+
+    <!-- ============= Login box ============ -->
+    <div class="login-box display">
+        <div class="lb-ctrl"></div>
+        <div class="lb-outer">
+            <div class="lb-close">
+                <img src="https://event.look-in.com.tw/member/images/close-btn.png" alt="">
+            </div>
+            <div class="lb-inner">
+                <div id="memberlogin">
+                    <form name="data_form" id="data_form" enctype="multipart/form-data" >
+                    <table cellpadding="" cellspacing="" text-align="center" width="" style="border:none;">
+                      <tbody>
+                        <tr>
+                          <td colspan="3">
+                                <a target="_blank" href="../../member/member_add.php" target="_blank">
+                                    <img src="https://event.look-in.com.tw/member/images/register-btn.png" alt="加入會員"></a>
+                              <img src="https://event.look-in.com.tw/member/images/title-memberlogin.png" alt="登入會員">
+                            </td>
+                        </tr>
+                        <tr>
+                           <td>E-mail：</td> <!--width="66" -->
+                          <td colspan="2"><input type="text" class="inputstyle-login validate[required,custom[email]]" id="m_email" name="m_email">
+                        </tr>
+                        <tr>
+                          <td>密碼：</td>
+                            <td colspan="2"><input type="password" class="inputstyle-login validate[required]" name="login_pwd" id="form-validation-field-1"></td>
+                         </tr>    
+                        <tr>
+                            <td></td>
+                            <td id="g-recaptcha-box"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td id="msg-txt"></td>
+                        </tr>
+                        <tr>
+                            <td></td> <!--width="41" -->
+                            <td colspan="2"><input type="reset" name="button" id="button" value="清除重填" class=" submit">
+                              &nbsp;
+                            <span class="memRegSubmit"><input id="data_submit" type="submit" name="button" value="送 出" class="submit"/></span></td>  
+                        </tr>                                
+                    </tbody>
+                    </table>
+                    <div>
+                        <div colspan="3"><p>以其他帳號加入/登入</p></div>
+                    </div>
+                    <div class="login-more-box">
+                    <!-- <a href="javascript:void(0);"> -->
+                        <span class="vote_box_data" data-fid="<?php echo $_SESSION['fb_id']; ?>" data-fmail="<?php echo $_SESSION['fb_email']; ?>" data-fname="<?php echo $_SESSION['fb_name']; ?>" data-award="<?php echo $_SESSION['award']; ?>" data-appid="<?php echo $_SESSION['fb_app_id']; ?>" data-memail="<?php echo $_SESSION['m_email']; ?>" data-mname="<?php echo $_SESSION['m_name']; ?>" data-mnickname="<?php echo $_SESSION['m_nick_name']; ?>" data-mobile="<?php echo $_SESSION['m_mobile']; ?>" data-msex="<?php echo $_SESSION['m_sex']; ?>"　data-mzip="<?php echo $_SESSION['m_zip']; ?>"　data-mcity="<?php echo $_SESSION['m_city']; ?>" data-marea="<?php echo $_SESSION['m_area']; ?>" data-maddress="<?php echo $_SESSION['m_address']; ?>" data-msource="<?php echo $_SESSION['m_source']; ?>" data-mstatus="<?php echo $_SESSION['m_status']; ?>" data-gemail="<?php echo $_SESSION['g_email']; ?>" data-gname="<?php echo $_SESSION['g_name']; ?>" data-mmobile="<?php echo $_SESSION['m_mobile']; ?>" data-mcity="<?php echo $_SESSION['m_city']; ?>" data-mzip="<?php echo $_SESSION['m_zip']; ?>"></span>
+                        <!-- <img id="login-fb" src="//lookin-img.pixfs.net/theme/images/login-fb.jpg" alt="以FB帳號登入"> -->
+                        <div id="login-fb">
+                            <div class="login-fb">
+                                Facebook 登入
+                            </div>
+                            <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div> -->
+                        </div>
+                    <!-- </a> &nbsp;  -->
+                    <!-- <a href="javascript:void(0);"> -->
+                        <!-- <img id="signin" class="g-signin2" data-onsuccess="onSignIn" src="//lookin-img.pixfs.net/theme/images/login-google.jpg" alt="以Google帳號登入">
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+                        <div id="login-google">
+                            <div class=login-google>
+                                Google 登入
+                            </div>
+                        </div>
+                    <!-- </a> -->
+                    </div>
+                    <div class="member-more">
+                        <img src="https://event.look-in.com.tw/member/images/messenger.png" alt="我要發問" align="absmiddle"> <a target="_blank" href="https://m.facebook.com/messages/thread/791734360894910">我要發問</a> &nbsp;
+                        <img src="//lookin-img.pixfs.net/theme/images/icn-forgetpsw.png" alt="忘記密碼" align="absmiddle"> <a target="_blank" href="https://www.look-in.com.tw/member/forgetpassword">忘記密碼</a>
+                        <!-- <img src="//lookin-img.pixfs.net/theme/images/icn-newmember.png" alt="加入會員" align="absmiddle"> <a href="../../member/member_add.php">加入會員</a> -->
+                        <!-- <img src="//lookin-img.pixfs.net/theme/images/icn-point.png" alt="LOOK IN點數說明" align="absmiddle"> <a href="/member/point_info" target="_blank" class="basic">LOOK IN點數說明</a>  -->
+                    </div>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <!-- ============= Curtain ============= -->
+    <div class="curtain index-curtain">
+        <div class="wrap"></div>
+    </div>
+    <!-- ============= Visual ============= -->
+    <section class="visual part" id="top">
+        <div class="visual-animation">
+            <img class="mobile" src="img/visual-animation-m.png" alt="">
+            <img class="pc" src="img/visual-animation-pc.png" alt="">
+        </div>
+        <div class="visual-bg">
+            <img class="vis-bg mobile" src="img/visual-m.png" alt="">
+            <img class="vis-bg pc" src="img/visual-pc.png" alt="">
+        </div>
+        <div class="open-game-btn">
+            <img class="mobile" src="img/open-game-m.png" alt="">
+            <img class="pc" src="img/open-game-pc.png" alt="">
+        </div>
+        <div class="link">
+            <a target="_blank" href="https://www.look-in.com.tw/" class="icon icon-lookin">
+                <img src="img/icon-lookin.png" alt="LOOKin">
+            </a>
+            <a target="_blank" href="https://www.facebook.com/lookin.tw/" class="icon icon-fb">
+                <img src="img/icon-fb.png" alt="LOOKin Facebook">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/ilovelookin/" class="icon icon-ig">
+                <img src="img/icon-ig.png" alt="LOOKin Instagram">
+            </a>
+            <a target="_blank" href="https://www.youtube.com/channel/UC9FymR5DhAubxbjWM9JmS_Q" class="icon icon-youtube">
+                <img src="img/icon-youtube.png" alt="LOOKin Youtube">
+            </a>
+        </div>
+        <!-- ============= Nav ============= -->
+        <div id="navbar" class="scrollspy">
+            <a id="logo" class="logo display" href="index.php"><img src="img/nav-logo.png" alt=""></a>
+            <a class="nav-sticky" href="#section-1" data-scrollspy="#section-1" class="active" href="javascript:void(0)"><img src="img/nav-1.png" alt=""></a>
+            <a class="nav-sticky" href="#section-2" data-scrollspy="#section-2" href="javascript:void(0)"><img src="img/nav-2.png" alt=""></a>
+            <a class="nav-sticky" href="#section-3" data-scrollspy="#section-3" href="javascript:void(0)"><img src="img/nav-3.png" alt=""></a>
+            <a class="nav-sticky" href="#section-4" data-scrollspy="#section-4" href="javascript:void(0)"><img src="img/nav-4.png" alt=""></a>
+        </div>
+
+        <nav id="cd-vertical-nav">
+            <ul>
+                <li><a class="dot_link" href="#top" data-number="1"><span class="cd-dot"></span></a><span class="cd-label">OPEN互動遊戲</span></li>
+                <li><a class="dot_link" href="#section-1" data-number="1"><span class="cd-dot"></span></a><span class="cd-label">旅行須知守則Q&A</span></li>
+                <li><a class="dot_link" href="#section-2" data-number="2"><span class="cd-dot"></span></a><span class="cd-label">旅行，說走就走</span></li>
+                <li><a class="dot_link" href="#section-3" data-number="3"><span class="cd-dot"></span></a><span class="cd-label">旅行，我們跟妳去</span></li>
+                <li><a class="dot_link" href="#section-4" data-number="4"><span class="cd-dot"></span></a><span class="cd-label">LOVE LOVE幸福明信片</span></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- ============= Open Game ============= -->
+    <div class="open-game display">
+        <div class="lb-ctrl"></div>
+        <div class="lb-outer">
+            <div class="lb-close">
+                <img src="img/opengame/close.png" alt="">
+            </div>
+            <div class="lb-inner">
+                <div class="lb-test lb-part">
+                    <div class="lb-bg">
+                        <img class="lb-bg-m" src="img/opengame/bg-m.png" alt="">
+                        <img class="lb-bg-pc" src="img/opengame/bg-pc.png" alt="">
+                    </div>
+                    <div class="lb-question-num">
+                        <img src="img/opengame/q1.png" alt="">
+                    </div>
+                    <div class="lb-question">
+                        <p>發現自己是200萬的發票頭彩獎金得主，妳會選擇現在怎麼做呢？</p>
+                    </div>
+                    <div class="lb-answer">
+                        <div class="answer answer-1">
+                            <p>仔細思考並規劃獎金的使用方式</p>
+                        </div>
+                        <div class="answer answer-2">
+                            <p>不囉嗦！立刻訂下機票準備出發</p>
+                        </div>    
+                        <div class="answer answer-3">
+                            <p>直接存入原先的夢想基金，等待圓夢</p>
+                        </div>        
+                    </div>
+                </div>
+
+                <!-- lb-final解答 -->
+                
+                <!-- <div class="lb-final lb-part">
+                    <div class="lb-bg">
+                        <img class="lb-bg-m" src="img/opengame/bg-final-m.png" alt="">
+                        <img class="lb-bg-pc" src="img/opengame/bg-final-pc.png" alt="">
+                    </div>
+                    <div class="lb-title">
+                        <p>沙灘！陽光！大海！人生最療癒～
+                            </p>
+                    </div>
+                    <div class="lb-sum">
+                        <p>比起自己勇闖天涯還是選擇跟姊妹一起出發才是最完美的選擇！逛累了就走進咖啡廳邊吃蛋糕、喝著飲料，那些極小的瑣事都能哈哈大笑、幫妳一起打抱不平，即便全世界都與我為敵也有姊妹在這裡，這樣到哪都不怕！</p>
+                    </div>
+                    <div class="lb-a">
+                        <a target="_blank" href="https://www.look-in.com.tw/channel/article/18631">到土耳其旅遊必做♥熱氣球、傳統市集，此生不能錯過</a>
+                    </div>
+                    <div class="lb-share">
+                        <p>分享至FB</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- ============= Q&A ============= -->
+    <section class="qa part" id="section-1">
+        <div class="wrap">
+            <div class="title">
+                <img src="img/title-1.png" alt="">
+            </div>
+            <div class="qa-slide owl-carousel">
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/18441">
+                        <img src="img/qa/qa-1.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/13254">
+                        <img src="img/qa/qa-2.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/16123">
+                        <img src="img/qa/qa-3.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/12894">
+                        <img src="img/qa/qa-4.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/13724">
+                        <img src="img/qa/qa-5.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/12710">
+                        <img src="img/qa/qa-6.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/13474">
+                        <img src="img/qa/qa-7.png" alt="">
+                    </a>
+                </div>    
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/13072">
+                        <img src="img/qa/qa-8.png" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a target="_blank" href="https://www.look-in.com.tw/channel/article/13812">
+                        <img src="img/qa/qa-9.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= Location ============= -->
+    <section class="location part" id="section-2">
+        <div class="wrap">
+            <div class="title title-location">
+                <img src="img/title-2.png" alt="">
+            </div>
+            <div class="taiwan-part slide-part">
+                <div class="sub-title">
+                    <img src="img/location/taiwan-title.png" alt="">
+                </div>
+                <div class="taiwan-slide slide-box owl-carousel">  
+                    <div class="location-slide taiwan-1"> <!-- 基隆 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-1.png">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17203">#神推時飴千層蛋糕</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-2"> <!-- 台北 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-2.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17507">#超好攻頂小山特蒐</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/14156">#早午餐#好拍打卡</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13717">#不限時咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12902">#童話Dream咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12755">#小閣樓#歐風咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11083">#根本攝影棚#咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11264">#海邊#雜貨#咖啡廳</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-3"> <!-- 桃園 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-3.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12601">#球池旋轉木馬咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12521">#小美國復古餐車</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12376">#超獨特漂流木公園</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11787">#少女粉#夢幻打卡點</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11643">#爆漿炸陷車輪餅</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/7019">#乾燥花系美食餐廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/10942">#私奔去月球#咖啡廳</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-4"> <!-- 新竹 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-4.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12446">#打卡夯點#魚鱗天梯</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12195">#煙燻粉芒草咖啡廳</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-5"> <!-- 苗栗 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-5.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/9043">#精靈樹屋</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/6821">#山海景點懶人包</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-6"> <!-- 台中 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-6.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16645">#首間迴轉甜點吃到飽</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/19085">#最美千層蛋糕</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15486">#日式質感小器食堂</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13578">#都市峇厘島</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/10689">#對比色操場太萌</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-7"> <!-- 台中-三井OUTLET -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-7.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15149">#海景書店#摩天輪</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15158">#美食懶人包</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15203">#必逛服裝品牌大蒐羅</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-8"> <!-- 彰化 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-8.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12878">#侏儸紀探索樂園</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11943">#隱藏景點宇宙銀河</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-9"> <!-- 南投 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-9.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12586">#教堂玻璃屋</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11879">#峇里島風發呆亭</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-10"> <!-- 雲林 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-10.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11569">#夢幻法式甜點店</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/8697">#絕美濕地-成龍村</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11724">#秘密拍照打卡點</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-11"> <!-- 嘉義 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-11.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/10960">#變身進到馬利歐世界</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11243">#粉嫩馬卡龍色實驗室</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/8245">#秘密打卡點#森林之歌</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-12"> <!-- "台南 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-12.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/10787">#圖書館#文青拍照點</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16882">#卡通主題套房住起來</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13731">#台南晶英輕奢享受</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11915">#下營小熊維尼彩繪村</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12721">#天堂上的鞦韆</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/14137">#景點IG打卡勝地</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/14077">#在地人吃的巷弄美食</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/10787">#根本是咖啡廳的圖書館</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-13"> <!-- 高雄 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-13.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12936">#火鶴烈紅隧道</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11843">#隧道城堡#打卡仙境</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-14"> <!-- 墾丁 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-14.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13910">#南國生活#咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11668">#霓虹貨櫃#海島咖啡廳</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-15"> <!-- 宜蘭 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-15.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13383">#羅東#美食清單</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13381">#貓#療癒咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16879">#台灣奈良#跟小鹿玩</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16453">#隱藏級神美照景點</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12178">#愛麗絲夢遊仙境</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/9178">#在地人口袋清單</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-16"> <!-- 花東 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-16.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/9178">#在地人口袋清單</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12237">童話哈比小矮人屋</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/9029">#海景打卡秘境</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-17"> <!-- 全台吃貨 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-17.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17964">#必吃甜甜圈</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18364">#罪惡系蛋餅</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17302">#星巴克迷絕對要去</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17897">#不可錯過芋頭鮮奶</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17159">#人氣雞蛋糕</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16967">#爆漿芋頭泡芙</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16951">#平價厚鬆餅</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16805">#涮嘴地瓜球</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15471">#暖冬火鍋必吃地圖</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-18"> <!-- 全台景點站 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-18.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11266">#熟紅落羽松林</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/11178">#7大必拍景點</a>
+                        </div>
+                    </div>
+                    <div class="location-slide taiwan-19"> <!-- 台灣住這裡 -->
+                        <img class="owl-lazy" data-src="img/location/taiwan/taiwan-19.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16932">#星空露營去</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16449">#不用飛出國也好享受</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="abroad-part slide-part">
+                <div class="sub-title">
+                    <img src="img/location/abroad-title.png" alt="">
+                </div>
+                <div class="abroad-slide slide-box owl-carousel">
+                    <div class="location-slide"> <!-- 日本 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-1.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18785">#2D#漫畫感咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16660">#拉拉熊鐵粉必去</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/13529">#北海道必吃</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/19045">#國民人氣美食寶典</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/16978">#便利商店必吃+隱藏清單</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/19239">#迪士尼#陪你過聖誕</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 韓國 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-2.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18785">#2D#漫畫感咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15265">#釜山#文青咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/14403">#濟州島#粉紅芒草</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/12145">#新沙洞#熱門咖啡廳</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 泰國 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-3.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18315">#限定珍珠奶茶雪糕</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15111">#森林系咖啡廳</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/15113">#不能錯過#泰式創意料理</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/14827">#時髦泰式飯店</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 中國 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-4.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/17878">#張愛玲的上海美食朝聖地圖</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 英國 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-5.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18354">#倫敦必知清單</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/5750">#哈利波特迷景點清單</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/5084">#文青必去倫敦市集</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/3825">#倫敦超市大搜查</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 希臘 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-6.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18309">#度假小島#米克諾斯</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18390">#聖托里尼懶人包</a>
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18265">#沈船灣#太陽的後裔拍攝地</a>
+                        </div>
+                    </div>
+                    <div class="location-slide"> <!-- 土耳其 -->
+                        <img class="owl-lazy" data-src="img/location/abroad/abroad-7.png" alt="">
+                        <div class="slide-hover">
+                            <a target="_blank" href="https://www.look-in.com.tw/channel/article/18631">#旅遊必做清單 #熱氣球</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= Upload ============= -->
+    <section class="upload part" id="section-3">
+        <div class="wrap">
+            <div class="title title-upload">
+                <img src="img/title-3.png" alt="">
+            </div>
+            <div class="wrap-pattern">
+                <div class="bulletin">
+                    <div class="sub-title">
+                        <img src="img/upload/sub-title.png" alt="">
+                    </div>
+                    <div class="event event-1" style="background-color: #ffd862">
+                        <!-- <div class="icon">
+                            <img src="img/upload/icon.png" alt="">
+                        </div> -->
+                        <p>投票＋留言就可獲得會員點數100點，並抽出1位幸運得主獲得幸運福袋喔！提醒您若抽出得獎者將根據會員資料寄送贈品！<a href="##">...點我看詳情</a></p>
+                    </div>
+                    <div class="event event-2" style="background-color: #a4c8ea;">
+                        <!-- <div class="icon">
+                            <img src="img/upload/icon.png" alt="">
+                        </div> -->
+                        <p>提醒您若抽出得獎者將根據會員資料寄送贈品！<a href="##">...點我看詳情</a></p>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-wrap">
+                        <div class="form-part">
+                            <div class="form-box">
+                                <div class="form-left">
+                                    <p>姓名：</p>
+                                    <p>地區分類：</p>
+                                    <p>地區/國家：</p>
+                                    <p>想說的話：</p>
+                                </div>
+                                <div class="form-right">
+                                    <div class="form-name"><input id="" name="" type="text" maxlength="15" placeholder="妳的名字"></div>
+                                    <div class="form-category">
+                                        <select id="" name="">
+                                            <option value="0" disabled selected>請選擇地區</option> 
+                                            <option value="2">亞洲</option>
+                                            <option value="3">歐洲</option>
+                                            <option value="4">美洲</option>
+                                            <option value="5">大洋洲</option>
+                                            <option value="6">非洲</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-area"><input id="" name="" type="text" placeholder="國家或地區"></div>
+                                    <div class="form-textarea">
+                                        <textarea id="" name="" maxlength="350" wrap=physical></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-box"><!--上傳圖預覽-->
+                            <img src="img/upload/default.png" data-tmp="space" class="preview" id="preview">
+                        </div>
+                        <div id="pre_image" class="row header_space" style="display: none;"></div>
+                        <!-- <div class="preview-base64-size" style=""></div>
+                        <div class="preview-base64-src" style=""></div>
+                        <div id="pre-image" style="display: none;"></div>
+                        <div id="canvasimage_box" style="display: none;"></div> -->
+
+                        <div class="form-btn">
+                            <label class="upload-btn">
+                                <div class="profilePictureUpload">上傳圖片</div>
+                                <input class="profilePictureInput" type="file" accept="image/png,image/jpeg" style="display:none;">
+                                <!-- <input class="upload-input" type="file" accept="image/png,image/jpeg" style="display:none;"> -->
+                            </label>
+                            <label class="send-btn">
+                                <div>確認送出</div>
+                                <button class="send-btn-img" data-value="space" onclick="upload_send(0)" data-tmp="space" alt="確認送出"></button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-category">
+                    <label class="demo-label">
+                        <p class="demo-disabled">地區分類 +</p>
+                        <select id="category" class="demo-select" name="category" onChange="location = this.options[this.selectedIndex].value;">
+                            <option value="0" disabled selected>地區分類 +</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php/#category">全分類</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php?category=2">亞洲</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php?category=3">歐洲</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php?category=4">美洲</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php?category=5">大洋洲</option>
+                            <option value="https://event.look-in.com.tw/2019/lookintravel2019/index.php?category=6">非洲</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div id="demo" class="demo">
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>Amanda</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-1.jpg"></div>
+                            <div class="demo-area demo-area-5"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-2.jpg"></div>
+                            <div class="demo-area demo-area-2"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>Amanda</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-3.jpg"></div>
+                            <div class="demo-area demo-area-3"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"></div>
+                            <div class="demo-area demo-area-4"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>Amanda</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-1.jpg"></div>
+                            <div class="demo-area demo-area-5"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"></div>
+                            <div class="demo-area demo-area-2"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-2.jpg"></div>
+                            <div class="demo-area demo-area-3"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>Amanda</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-3.jpg"></div>
+                            <div class="demo-area demo-area-1"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"></div>
+                            <div class="demo-area demo-area-2"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>旅行跟我來旅行跟我來</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-2.jpg"></div>
+                            <div class="demo-area demo-area-2"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-item">
+                        <div class="demo-wrap">
+                            <div class="demo-name-wrap">
+                                <div class="demo-name">
+                                    <p>Amanda</p>
+                                </div>
+                            </div>
+                            <div class="demo-img"><img src="img/upload/demo-3.jpg"></div>
+                            <div class="demo-area demo-area-1"><p>#<span>日本秋葉原</span></p></div>
+                            <div class="demo-sum"><p>秋葉原和泉橋往美倉橋拍攝一景雖說人是群居動物，但相信不論是誰，偶爾還是會想要一個人靜一下，給自己跟自己交流的時間。 </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============= Post Card ============= -->
+    <section class="postcard part" id="section-4">
+        <div class="wrap">
+            <div class="wrap-pattern">
+                <div class="title">
+                    <img src="img/title-4.png" alt="">
+                </div>
+                <div class="demo">
+                    <div class="bg">
+                        <img src="img/postcard/demo.png" alt="">
+                        <div class="demo-deco">
+                            <img id="demo-postcard" src="img/postcard/postcard-2.png" data-img-url="img/postcard/postcard-2.png" alt="">
+                            <img id="demo-stamp" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-1" class="display" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-2" class="display" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-3" class="display" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-4" class="display" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-5" class="display" src="" data-img-url="" alt="">
+                            <img id="demo-decoration-6" class="display" src="" data-img-url="" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="item-part">
+                    <div class="frame item-box">
+                        <div class="sub-title">
+                            <img src="img/postcard/subtitle-1.png" alt="選擇想寄送的明信片">
+                        </div>
+                        <div class="item-btn">
+                            <div id="item-1" class="item">
+                                <img src="img/postcard/postcard-1.png" alt="">
+                            </div>
+                            <div id="item-2" class="item">
+                                <img src="img/postcard/postcard-2.png" alt="">
+                            </div>
+                            <div id="item-3" class="item">
+                                <img src="img/postcard/postcard-3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-part">
+                    <div class="item-col">
+                        <div class="stamp item-box">
+                            <div class="sub-title">
+                                <img src="img/postcard/subtitle-2.png" alt="選擇想要的郵戳">
+                            </div>
+                            <div class="item-btn">
+                                <div id="item-4" class="item">
+                                    <img src="img/postcard/stamp-btn-1.png" alt="">
+                                </div>
+                                <div id="item-5" class="item">
+                                    <img src="img/postcard/stamp-btn-2.png" alt="">
+                                </div>
+                                <div id="item-6" class="item">
+                                    <img src="img/postcard/stamp-btn-3.png" alt="">
+                                </div>
+                                <div id="item-7" class="item">
+                                    <img src="img/postcard/stamp-btn-4.png" alt="">
+                                </div>
+                                <div id="item-8" class="item">
+                                    <img src="img/postcard/stamp-btn-5.png" alt="">
+                                </div>
+                                <div id="item-9" class="item">
+                                    <img src="img/postcard/stamp-btn-6.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deco item-box">
+                            <div class="sub-title">
+                                <img src="img/postcard/subtitle-3.png" alt="選擇想要的設計">
+                            </div>
+                            <div class="item-btn">
+                                <div id="item-10" class="item">
+                                    <img src="img/postcard/deco-btn-1.png" alt="">
+                                </div>
+                                <div id="item-11" class="item">
+                                    <img src="img/postcard/deco-btn-2.png" alt="">
+                                </div>
+                                <div id="item-12" class="item">
+                                    <img src="img/postcard/deco-btn-3.png" alt="">
+                                </div>
+                                <div id="item-13" class="item">
+                                    <img src="img/postcard/deco-btn-4.png" alt="">
+                                </div>
+                                <div id="item-14" class="item">
+                                    <img src="img/postcard/deco-btn-5.png" alt="">
+                                </div>
+                                <div id="item-15" class="item">
+                                    <img src="img/postcard/deco-btn-6.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-part">
+                    <div class="text item-box">
+                        <div class="sub-title">
+                            <img src="img/postcard/subtitle-4.png" alt="留下想說的話">
+                        </div>
+                        <div class="text-box">
+                            <div class="text-col">
+                                <div class="text-input sender">
+                                    <input id="" name="" type="text" maxlength="15" placeholder="妳的名字">
+                                </div>
+                                <div class="text-input receiver">
+                                    <input id="" name="" type="text" maxlength="15" placeholder="收件人的名字">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <textarea name="" id="" maxlength="150" placeholder="妳想說的話"></textarea>
+                            </div>
+                        </div>
+                        <div class="send-btn">
+                            <img src="img/postcard/send-btn.png" alt="確認送出">
+                        </div>
+                    </div>
+                </div>
+                <!-- ============= Footer ============= -->
+                <footer>
+                    <div class="footer-bg"></div>
+                    <div class="wrap">
+                        <div class="link">
+                            <a class="web" target="_blank" href="https://www.look-in.com.tw/"><img src="img/footer/lookin.png" alt="LOOKin"></a>
+                            <a class="fb" target="_blank" href="https://www.facebook.com/lookin.tw/"><img src="img/footer/fb.png" alt="LOOKin FB"></a>
+                            <a class="ins" target="_blank" href="https://www.instagram.com/ilovelookin/"><img src="img/footer/ig.png" alt="LOOKin IG"></a>
+                            <a class="yt" target="_blank" href="https://www.youtube.com/channel/UC9FymR5DhAubxbjWM9JmS_Q"><img src="img/footer/youtube.png" alt="LOOKin Youtube"></a>
+                        </div>
+                        <p>尖端出版 版權所有，禁止未經授權轉貼節錄。<a href="https://www.look-in.com.tw/privacy">隱私權政策</a><br>©1999- <script>var d=new Date();document.write(d.getFullYear());</script> Sharp Point Media Group, a division of Cite Publishing Ltd All rights reserved.</p>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= Go Top ============= -->
+    <div class="top-box">
+        <a id="return-to-top" style="display: block;"><img src="img/top.png"></a>
+    </div>
+
+
+
+<!-- ============= Script Src ============= -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://event.look-in.com.tw/2019/ilovechocolate/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/simple-scrollspy.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="owlcarousel/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+    
+
+<script>
+    $(window).on('load',function() {
+        $(".visual-animation").addClass('visual-animate');
+    });
+</script>
+    
+    
+
+
+<!-- ============= Google Analytics ============= -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-1010265-8', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- ============= Scroll To Top ============= -->
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 600) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
+
+<!-- ============= ScrollSpy ============= -->
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("logo");
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+        logo.classList.remove("display");
+      } else {
+        navbar.classList.remove("sticky");
+        logo.classList.add("display");
+      }
+    }
+</script>
+<script>
+    window.onload = function () {
+    scrollSpy('#navbar', {
+    offset: 0, // in pixels
+    menuActiveTarget: 'div > a',
+    sectionClass: '.scrollspy',
+    activeClass: 'active',
+    })
+    }
+</script>
+
+<!-- ============= OwlCarousel Slide Show ============= -->
+<script>
+    $(document).ready(function(){
+        $('.qa-slide').owlCarousel({
+            loop:true,
+            dots:false,
+            nav:true,
+            responsiveClass:true,
+            autoplay:true,
+            autoplayTimeout:2500,
+            autoplayHoverPause:true,
+            rewindNav : true,
+            navText: ["<img src='img/qa/arrow-left.png'>","<img src='img/qa/arrow-right.png'>"],
+            responsive:{
+                0:{
+                    items:1,
+                    margin:40
+                },
+                // 769:{
+                //     items:2
+                // },
+                1201:{
+                    items:3,
+                    margin:20
+                },
+                1601:{
+                    items:4,
+                    margin:0
+                }
+            }
+        })
+        $('.slide-box').owlCarousel({
+            loop:true,
+            dots:false,
+            nav:true,
+            responsiveClass:true,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplayHoverPause:true,
+            rewindNav : true,
+            lazyLoad: true,
+            navText: ["<img src='img/location/arrow-left.png'>","<img src='img/location/arrow-right.png'>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                // 900:{
+                //     items:2
+                // },
+                1200:{
+                    items:3
+                },
+                1680:{
+                    items:4
+                },
+                1920:{
+                    items:5
+                }
+            }
+        })
+    });
+</script>
+
+<!-- ============= Masonry ============= -->
+<script> 
+    $(function(){ 
+        var $container = $('#demo'); 
+        $container.imagesLoaded(function(){ 
+            $container.masonry({ 
+                itemSelector : '.demo-box', 
+                isAnimated: true, 
+                horizontalOrder: true,
+                fitWidth: true,
+                columnWidth : '.demo-box',
+                isFitWidth: true,
+            }); 
+        }); 
+    }); 
+</script>
+<script>
+    // selectと同じようにonchangeでラベルを変えたいときはJSを用いる
+    $('.demo-select').on('change', function(){
+
+    var $this = $(this)
+    var $option = $this.find('option:selected');
+    $('.demo-disabled').text($option.text());
+
+    // onchange後にフォーカスしてるのが嫌な場合
+    $this.blur();
+    });
+    </script>
+
+
+<!-- ============= Open Game Lightbox ============= -->
+<script>
+    $(".lb-close , .lb-ctrl").click(function () {
+        $(".open-game").hide();
+        });
+    $(".open-game-btn").click(function () {
+        $(".open-game").show();
+        });
+</script>
+
+
+
+<!-- ============= Postcard ============= -->
+<script>
+    $(function () {
+        $("#item-1").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-1.png");
+        });
+
+        $("#item-2").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-2.png");
+        });
+
+        $("#item-3").click(function () { //底圖
+            $("#demo-postcard").attr("src", "img/postcard/postcard-3.png");
+        });
+
+        $("#item-4").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-1.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-1.png');
+        });
+        $("#item-5").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-2.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-2.png');
+        });
+        $("#item-6").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-3.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-3.png');
+        });
+        $("#item-7").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-4.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-4.png');
+        });
+        $("#item-8").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-5.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-5.png');
+        });
+        $("#item-9").click(function () { //郵戳
+            $("#demo-stamp").attr("src", "img/postcard/stamp-6.png");
+            $("#demo-stamp").data('img-url','img/postcard/stamp-6.png');
+        });
+
+        $("#item-10").click(function () { //裝飾
+            $("#demo-decoration-1").toggle();
+            $("#demo-decoration-1").attr("src", "img/postcard/deco-1.png");
+            $("#demo-decoration-1").data('img-url','img/postcard/deco-1.png');
+        });
+        $("#item-11").click(function () { //裝飾
+            $("#demo-decoration-2").toggle();
+            $("#demo-decoration-2").attr("src", "img/postcard/deco-2.png");
+            $("#demo-decoration-2").data('img-url','img/postcard/deco-2.png');
+        });
+        $("#item-12").click(function () { //裝飾
+            $("#demo-decoration-3").toggle();
+            $("#demo-decoration-3").attr("src", "img/postcard/deco-3.png");
+            $("#demo-decoration-3").data('img-url','img/postcard/deco-3.png');
+        });
+        $("#item-13").click(function () { //裝飾
+            $("#demo-decoration-4").toggle();
+            $("#demo-decoration-4").attr("src", "img/postcard/deco-4.png");
+            $("#demo-decoration-4").data('img-url','img/postcard/deco-4.png');
+        });
+        $("#item-14").click(function () { //裝飾
+            $("#demo-decoration-5").toggle();
+            $("#demo-decoration-5").attr("src", "img/postcard/deco-5.png");
+            $("#demo-decoration-5").data('img-url','img/postcard/deco-5.png');
+        });
+        $("#item-15").click(function () { //裝飾
+            $("#demo-decoration-6").toggle();
+            $("#demo-decoration-6").attr("src", "img/postcard/deco-6.png");
+            $("#demo-decoration-6").data('img-url','img/postcard/deco-6.png');
+        });
+    });
+
+</script>
+</body>
+
+</html>
